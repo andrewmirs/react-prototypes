@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default () => {
+export default (props) => {
     return (
         <table className="table">
             <thead className="thead-inverse">
