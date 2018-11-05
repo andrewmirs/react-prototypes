@@ -10,7 +10,13 @@ class ContactForm extends Component {
                 firstName: '',
                 lastName: '',
                 phone: '',
-                email: ''
+                email: '',
+                address: {
+                    street: '',
+                    city: '',
+                    state: '',
+                    zip: ''
+                }
             }
         };
 
@@ -41,7 +47,13 @@ class ContactForm extends Component {
                 firstName: '',
                 lastName: '',
                 phone: '',
-                email: ''
+                email: '',
+                address: {
+                    street: '',
+                    city: '',
+                    state: '',
+                    zip: ''
+                }
             }
         });
     }

@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default props => {
-    const {firstName, lastName, phone, email} = props.contact;
+    const {firstName, lastName, phone, email, address} = props.contact;
     return (
         <div className="col-6 my-3">
             <div className="card">
@@ -13,6 +13,12 @@ export default props => {
                     <div className="card-text">
                         <p><b>Phone:</b> {phone}</p>
                         <p><b>Email:</b> {email}</p>
+                    </div>
+                    <hr />
+                    <div className="card-text">
+                        <p><b>Address:</b></p>
+                        <p>{address.street}</p>
+                        <p>{address.city}, {address.state} {address.zip}</p>
                     </div>
                 </div>
             </div>

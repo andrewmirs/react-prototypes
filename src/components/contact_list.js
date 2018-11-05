@@ -17,3 +17,16 @@ class ContactList extends Component {
 }
 
 export default ContactList;
+
+// export default () => {
+//     const list = this.props.contacts.map(( item, index ) => {
+//         return (
+//             <ContactCard key={index} contact={item}/>
+//         )
+//     });
+//     return(
+//         <div className="col-8">
+//             <div className="row">{list}</div>
+//         </div>
+//     )
+// }
