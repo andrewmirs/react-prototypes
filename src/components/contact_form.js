@@ -29,15 +29,19 @@ class ContactForm extends Component {
         const{value, name} = event.target;
         const{form} = this.state;
         form[name]= value;
-
+        
         this.setState({
-            form: {...form}
+            form: {...form,
+            address:{...address}
+        },
+             
         });
     }
 
     handleSubmit(event){
         event.preventDefault();
         this.props.add(this.state.form)
+        this.props.add(this.state.form.address)
         this.reset();
     }
 
@@ -60,6 +64,7 @@ class ContactForm extends Component {
     
     render(){
         const {firstName, lastName, phone, email} = this.state.form;
+        const {street, city, state, zip} = this.state.form.address;
 
         return(
             <form onSubmit={this.handleSubmit}>
@@ -67,7 +72,11 @@ class ContactForm extends Component {
                 <Field name="lastName" label="Last Name" type="text" value={lastName} onChange={this.handleInputChange}/>
                 <Field name="phone" label="Phone Number" type="tel" value={phone} onChange={this.handleInputChange}/>
                 <Field name="email" label="Email" type="email" value={email} onChange={this.handleInputChange}/>
-                <button className="btn btn-success btn-md">Add Contact</button> <button className="btn btn-warning btn-md" type="button" onClick={this.reset}>Clear Form</button>
+                <Field name="street" label="Street" type="text" value={street} onChange={this.handleInputChange}/>
+                <Field name="city" label="City" type="text" value={city} onChange={this.handleInputChange}/>
+                <Field name="state" label="State" type="text" value={state} onChange={this.handleInputChange}/>
+                <Field name="zip" label="Zip" type="number" value={zip} onChange={this.handleInputChange}/>
+                <button className="btn btn-outline-info btn-md">Add Contact</button> <button className="btn btn-outline-warning btn-md" type="button" onClick={this.reset}>Clear Form</button>
             </form>
         )
     }

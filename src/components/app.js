@@ -15,8 +15,6 @@ class App extends Component {
     }
 
     addContact(contact){
-        console.log("App: addContact:", contact);
-        
         this.setState({
             contacts: [contact, ...this.state.contacts]
         });
