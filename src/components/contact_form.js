@@ -27,14 +27,12 @@ class ContactForm extends Component {
 
     handleInputChange(event){
         const{value, name} = event.target;
-        const{form} = this.state;
+        const{form, form: { address } }  = this.state;
         form[name]= value;
         
         this.setState({
-            form: {...form,
-            address:{...address}
-        },
-             
+            form: {...form},
+            address: {...address}
         });
     }
 
