@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Movie from './movies';
+import Movies from './movies';
 
 class MovieContainer extends Component {
     constructor(props){
@@ -20,11 +20,12 @@ class MovieContainer extends Component {
         });
     }
     render(){
-        console.log(this.state);
+        const movieList = this.state.movies.map((movieInfo, index) => {
+            return <Movies info={movieInfo} key={index} />
+        });
         return(
             <div>
-                <h2>Movie Container</h2>
-                <Movie />
+                { movieList }
             </div>
         );
     }
