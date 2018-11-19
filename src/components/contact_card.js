@@ -6,7 +6,7 @@ export default props => {
         <div className="col-6 my-3">
             <div className="card">
                 <div className="card-header">
-                {lastName}
+                {lastName} <span class="glyphicon glyphicon-envelope"></span>
                 </div>
                 <div className="card-block">
                     <h4 className="card-title">{firstName} {lastName}</h4>

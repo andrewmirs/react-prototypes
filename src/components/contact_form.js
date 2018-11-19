@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Field from './field';
+import '../css/contactform.css';
 
 class ContactForm extends Component {
     constructor(props){
@@ -28,18 +29,26 @@ class ContactForm extends Component {
     handleInputChange(event){
         const{value, name} = event.target;
         const{form, form: { address } }  = this.state;
-        form[name]= value;
+        
+
+        if(typeof form[name] === 'string'){
+            form[name]= value;
+        } else if (typeof address[name] === 'string'){
+            address[name] = value;
+        }
         
         this.setState({
-            form: {...form},
-            address: {...address}
+            form: {
+                ...form,
+                address: {...address}
+            }
         });
     }
 
     handleSubmit(event){
         event.preventDefault();
+
         this.props.add(this.state.form)
-        this.props.add(this.state.form.address)
         this.reset();
     }
 
