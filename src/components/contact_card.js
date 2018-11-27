@@ -1,4 +1,5 @@
 import React from 'react';
+import "../css/contactform.css";
 
 export default props => {
     const {firstName, lastName, phone, email, address} = props.contact;
@@ -6,9 +7,9 @@ export default props => {
         <div className="col-6 my-3">
             <div className="card">
                 <div className="card-header">
-                {lastName} <span class="glyphicon glyphicon-envelope"></span>
+                {lastName} <div className="icons"><i className="fa fa-trash-o" aria-hidden="true"></i></div>
                 </div>
-                <div className="card-block">
+                <div className="card-body">
                     <h4 className="card-title">{firstName} {lastName}</h4>
                     <div className="card-text">
                         <p><b>Phone:</b> {phone}</p>
