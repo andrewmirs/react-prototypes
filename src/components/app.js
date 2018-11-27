@@ -25,7 +25,7 @@ class App extends Component {
     render(){
         return (
             <div className="container">
-                <h1 className="text-center">Address Book</h1>
+                <h1 className="text-center mainheader">Address Book</h1>
                 <div className="row">
                     <div className="col-4">
                         <ContactForm  add={this.addContact}/>

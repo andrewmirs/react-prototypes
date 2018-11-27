@@ -51,13 +51,29 @@ class ContactList extends Component {
         });
         return(
             <div className="col-8">
-                <div className="offset-6 col-6 input-group mb-3">
-                    <div className="input-group-prepend">
-                        <span className="input-group-text">Search</span>
+                <div className="col-12">
+                    <div className="offset-6 col-6 input-group">
+                        <div className="input-group-prepend">
+                            <span className="input-group-text">Search</span>
+                        </div>
+                            <input className="form-control" type="text"
+                                value={this.state.search}
+                                onChange={this.updateSearch} />
                     </div>
-                        <input className="form-control" type="text"
-                            value={this.state.search}
-                            onChange={this.updateSearch} />
+                </div>
+                <div className="sortbtn btn-group offset-8" role="group" aria-label="Button group with nested dropdown">
+                    <button type="button" className="btn btn-secondary">A-Z</button>
+                    <button type="button" className="btn btn-secondary">Z-A</button>
+
+                    <div className="btn-group" role="group">
+                        <button id="btnGroupDrop1" type="button" className="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        Sort By
+                        </button>
+                        <div className="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                            <a className="dropdown-item" href="#">First Name</a>
+                            <a className="dropdown-item" href="#">Last Name</a>
+                        </div>
+                    </div>
                 </div>
                 <div className="col-12">
                     <div className="row">{list}</div>
