@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ContactList from './contact_list';
 import ContactForm from './contact_form';
 import contactData from '../data/contacts';
+import addressbook from '../images/addressbook.png';
 import '../css/contactform.css';
 
 

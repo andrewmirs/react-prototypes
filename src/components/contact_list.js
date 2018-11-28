@@ -37,6 +37,10 @@ class ContactList extends Component {
         return false
     }
 
+    // sortContacts(){
+
+    // }
+
     render(){
         let filteredContacts = this.props.contacts.filter(
             (contact) => {
